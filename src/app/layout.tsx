@@ -12,22 +12,22 @@ const geist모노체 = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const 메타데이터: Metadata = {
+export const metadata: Metadata = {
   title: "Next 앱 만들기",
   description: "create next app으로 생성됨",
 };
 
 export default function 루트레이아웃({
-  자식요소,
+  children,
 }: Readonly<{
-  자식요소: React.ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="ko">
       <body
         className={`${geist산스체.variable} ${geist모노체.variable} antialiased`}
       >
-        {자식요소}
+        {children}
       </body>
     </html>
   );
