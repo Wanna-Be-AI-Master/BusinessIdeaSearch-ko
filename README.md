@@ -136,6 +136,78 @@
 
 ---
 
+## 사용법
+
+### 빠른 시작
+
+이 프로젝트는 일본 시장에서 유효한 비즈니스 아이디어를 발굴하기 위한 리서치 도구입니다.
+
+#### 1. 프로젝트 설정
+
+```bash
+# 저장소 클론
+git clone https://github.com/Wanna-Be-AI-Master/BusinessIdeaSearch-ko.git
+cd BusinessIdeaSearch-ko
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+```
+
+#### 2. 키워드 플래너 로그인 (선택사항)
+
+Google 키워드 플래너에 접속하여 검색량 데이터를 조사할 수 있습니다:
+
+```bash
+# Playwright로 키워드 플래너 열기
+npm run keyword-planner-login
+```
+
+이 스크립트는:
+- Chrome 브라우저를 자동으로 실행
+- Google 키워드 플래너 로그인 페이지로 이동
+- 사용자가 수동으로 로그인할 수 있도록 대기 (10분간 열어둠)
+
+로그인 후 키워드를 입력하고 검색량 데이터를 수동으로 조사하세요.
+
+#### 3. 비즈니스 아이디어 발굴하기
+
+**조사 프로세스:**
+
+1. **키워드 카테고리 선택**: `README.md`의 "조사할 키워드 카테고리" 참고
+2. **검색량 조사**: 키워드 플래너에서 월 검색량 1,000회 이상 키워드 찾기
+3. **경쟁 분석**: Google Japan, App Store에서 해당 키워드 검색
+4. **니즈 검증**: 반드시 필요한(Must have) 서비스인지 확인
+5. **결과 기록**: `keyword-research/` 폴더에 조사 결과 정리
+
+**예시 워크플로우:**
+
+```bash
+# 1. 키워드 플래너에서 "届出 アプリ" 검색
+# 2. 월 검색량 확인 (예: 2,500회)
+# 3. Google Japan에서 검색하여 경쟁 앱 확인
+# 4. App Store에서 "届出" 검색
+# 5. keyword-research/새로운-키워드.md 파일 작성
+```
+
+#### 4. 조사 결과 확인
+
+기존 조사 결과는 다음 폴더에서 확인할 수 있습니다:
+
+- `apps/`: 분석 완료된 앱 아이디어
+  - `01-kataduke/`: 정리정돈 앱 분석
+  - `02-koukan-nikki/`: 교환일기 앱 분석
+  - `03-setsuyaku-kondate/`: 절약 식단 앱 분석
+
+- `keyword-research/`: 키워드별 상세 조사 결과
+  - `00-종합정리-01.md`: 전체 키워드 요약
+  - `78-일본앱스토어경쟁분석.md`: 일본 앱스토어 경쟁 분석
+  - `79-최종결론-액션플랜.md`: 최종 결론 및 실행 계획
+
+---
+
 ## 주요 기능
 
 - **아이디어 검색**: 키워드 검색량 기반 비즈니스 아이디어 발굴
@@ -183,6 +255,7 @@ npm run dev
 | `npm run build` | 프로덕션 빌드 |
 | `npm run start` | 프로덕션 서버 실행 |
 | `npm run lint` | ESLint 실행 |
+| `npm run keyword-planner-login` | 키워드 플래너 로그인 페이지 열기 |
 | `npm run test:e2e` | E2E 테스트 실행 |
 | `npm run test:e2e:ui` | E2E 테스트 UI 모드 |
 | `npm run test:e2e:headed` | E2E 테스트 (headed 모드) |
