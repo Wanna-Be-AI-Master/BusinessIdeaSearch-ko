@@ -1,0 +1,24 @@
+name: Trigger Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'docs/**'
+
+jobs:
+  trigger-deploy:
+    name: Trigger ECS Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger deployment workflow
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.INFRA_REPO_TOKEN }}
+          repository: Wanna-Be-AI-Master/BusinessIdeaSearch-infra
+          event-type: deploy-app
+          client-payload: '{"environment": "dev", "ref": "${{ github.sha }}"}'

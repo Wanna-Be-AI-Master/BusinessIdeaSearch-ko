@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npx playwright:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nchore: CI 워크플로우 최적화\n\n- paths-ignore 추가 \\(마크다운, docs 변경 시 스킵\\)\n- concurrency 설정으로 중복 실행 취소\n- E2E 테스트 조건부 실행 \\(run-e2e 라벨 또는 main push\\)\n- Chromium 브라우저만 설치하여 비용 절감\n- Playwright 리포트 실패 시에만 업로드, 보관 기간 7일로 단축\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
+    ]
+  },
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
