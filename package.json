@@ -10,7 +10,10 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
-    "keyword-planner-login": "npx tsx scripts/keyword-planner-login.ts"
+    "keyword-planner-login": "npx tsx scripts/keyword-planner-login.ts",
+    "keyword-research": "npx tsx scripts/keyword-planner-research.ts",
+    "keyword-research-korea": "npx tsx scripts/keyword-research-korea.ts",
+    "blueoocean-finder": "npx tsx scripts/keyword-blueoocean-finder.ts"
   },
   "dependencies": {
     "next": "16.1.1",
